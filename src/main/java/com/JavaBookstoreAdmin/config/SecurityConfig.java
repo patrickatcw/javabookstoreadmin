@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_MATCHERS = {
             "/css/**",
             "/js/**",
-            "/",    //root
+            //"/",    //root
             //"/myAccount"
             //paths important for new user login and email notification
             "/newUser",

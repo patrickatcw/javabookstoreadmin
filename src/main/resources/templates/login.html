@@ -6,11 +6,13 @@
 
 <body>
 
-<h6 class="center-block">HELLO!! YOU ARE NOW IN THE ADMIN REALM FOR JAVA BOOKSTORE</h6>
+<div class="container">
+<br>
+    <h3 class="center-block">HELLO!! YOU ARE NOW IN THE ADMIN REALM FOR JAVA BOOKSTORE</h3>
 
 <img src="https://cdn.logojoy.com/wp-content/uploads/2017/07/Java_logo_icon.png"
-     style="width:400px;height:300px;"/>
-
+     style="width:400px;height:200px;"/>
+<hr>
 <div class="row">
     <div class="col-xs-4 col-md-offset-4">
         <div class="bg-danger" th:if="${param.error}">
@@ -36,6 +38,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">LOG IN</button>
         </form>
     </div>
+</div>
 </div>
 
 <div th:replace="common/header :: body-bottom-scripts"></div>

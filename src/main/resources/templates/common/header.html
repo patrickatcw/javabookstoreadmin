@@ -7,12 +7,15 @@
 
     <title>JAVA BOOKSTORE</title>
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!--bootstrap core css-->
+    <!--<link href="/css/bootstrap.min.css" rel="stylesheet">-->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
     <!--<link href="/css/non-responsive.css" rel="stylesheet">-->
 
     <!-- Custom styles for this template -->
-    <link href="/css/style.css" rel="stylesheet">
+    <!--<link href="/css/style.css" rel="stylesheet">-->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 
     <!--little icon on browser title-->
     <link rel="icon" href="http://worldartsme.com/images/apple-book-clipart-1.jpg"/>
@@ -64,8 +67,12 @@
 
 <div th:fragment="body-bottom-scripts">
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>-->
+
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+
 </div>
 
 </body>
