@@ -33,8 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_MATCHERS = {
             "/css/**",
             "/js/**",
-            //"/",    //root
-            //"/myAccount"
             //paths important for new user login and email notification
             "/newUser",
             "/forgetPassword",
@@ -47,14 +45,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests().
-                /*	antMatchers("/**").*/
                         antMatchers(PUBLIC_MATCHERS).
                 permitAll().anyRequest().authenticated(); //any files easily available, otherwise requires authentication
 
         http
-                .csrf().disable().cors().disable()          //disables crosssite requests
-                .formLogin().failureUrl("/login?error")/*.defaultSuccessUrl("/")*/
-                //commented out above to fix parsing error for line 32 in header
+                .csrf().disable().cors().disable()          //disables crossite requests
+                .formLogin().failureUrl("/login?error")
+//                the default for sussesful login should be the home path
+                .defaultSuccessUrl("/home")
                 .loginPage("/login").permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

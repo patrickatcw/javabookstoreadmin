@@ -1,0 +1,1 @@
+SELECT * FROM javabookstoredb.user_role;
