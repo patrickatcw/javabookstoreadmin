@@ -37,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/newUser",
             "/forgetPassword",
             "/login",
+            //"/addBook",
             "/fonts/**"
 
     };
@@ -51,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable().cors().disable()          //disables crossite requests
                 .formLogin().failureUrl("/login?error")
-//                the default for sussesful login should be the home path
+                    //the default for sussesful login should be the home path
                 .defaultSuccessUrl("/home")
                 .loginPage("/login").permitAll()
                 .and()
