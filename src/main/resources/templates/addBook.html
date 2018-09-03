@@ -1,83 +1,250 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
 <head th:replace="common/header :: common-header">
-
 </head>
 
 <body>
 
-<div th:replace="common/header :: navbar">
+<div th:replace="common/header :: navbar"></div>
 
-    <div class="container">
-        <div class="row">
-            <form class="form-horizontal" th:action="@{/book/add}" method="post" enctype="multipart/form-data">
-                <fieldset>
-                    <legend class="center-block">New Book Information</legend><span style="font-size:small"> * is a required field</span>
+<div class="container">
+    <div class="row">
+        <form class="form-horizontal" th:action="@{/book/add}" method="post"
+              enctype="multipart/form-data">
+            <fieldset>
+                <legend class="center-block">
+                    New Book Information
+                    </br>
+                    <span style="font-size:small"> (* is a required field)</span>
 
-                    <!-- title -->
-                    <div class="form-group">
-                        <label for="title">* Title</label>
-                        <input type="text" class="form-control" id="title" th:value="${book.title}" required="required" placeholder="Title">
-                        <span class="help-block">Title of the Book</span>
+                </legend>
+
+                <!-- title -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="title">* Title</label>
+
+                    <div class="col-md-8">
+                        <input type="text" name="title" class="form-control"
+                               id="title" th:value="${book.title}"
+                               required="required" placeholder="Title"/><span
+                            class="help-block">Book Title</span>
                     </div>
+                </div>
 
-                    <!-- author -->
-                    <div class="form-group">
-                        <label for="author">* Author</label>
-                        <input type="text" class="form-control" id="author" th:value="${book.author}" required="required" placeholder="Author">
-                        <span class="help-block">Author of the Book</span>
+                <!-- author -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="author">* Author</label>
+                    <div class="col-md-8">
+                        <input type="text" name="author"
+                               class="form-control" id="author"
+                               th:value="${book.author}"
+                               required="required" placeholder="Author"/><span
+                            class="help-block">Book Author</span>
                     </div>
+                </div>
 
-                    <!-- publisher -->
-                    <div class="form-group">
-                        <label for="publisher">Publisher</label>
-                        <input type="text" class="form-control" id="publisher" th:value="${book.publisher}" placeholder="Publisher">
-                        <span class="help-block">Publisher of the Book</span>
+                <!-- publisher -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="publisher">Publisher</label>
+                    <div class="col-md-8">
+                        <input type="text" name="publisher"
+                               class="form-control" id="publisher"
+                               th:value="${book.publisher}"
+                               placeholder="Publisher"/><span
+                            class="help-block">Book Publisher</span>
                     </div>
+                </div>
 
-                    <!-- publication date -->
-                    <div class="form-group">
-                        <label for="publicationDate">Publication Date</label>
-                        <input type="date" class="form-control" id="publicationDate" th:value="${book.publicationDate}" placeholder="ublication Date">
-                        <span class="help-block">Publication Date of the Book</span>
+                <!-- publication date -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="publicationDate">Publication Date</label>
+                    <div class="col-md-8">
+                        <input type="date" class="form-control" id="publicationDate" name="publicationDate"
+                               th:value="${book.publicationDate}" placeholder="ublication Date"/>
+                        <span class="help-block">Publication Date</span>
                     </div>
+                </div>
 
-                    <!-- language -->
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label" for="language">Language</label>
-                        <div class="col-xs-8">
-                            <select th:value="${book.language}" id="language" class="form-control">
-                                <option value="english">English</option>
-                                <option value="spanish">Spanish</option>
-                            </select>
+                <!-- language -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="language">Language</label>
+                    <div class="col-xs-8">
+                        <select th:value="${book.language}" id="language" name="language"
+                                class="form-control">
+                            <option value="english">English</option>    <!--drop-down-->
+                            <option value="spanish">French</option>
+                            <option value="spanish">Chinese</option>
+                        </select>
+                    </div>
+                </div>
+                </br>
+
+                <!-- category -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="category">* Category</label>
+                    <div class="col-xs-8">
+                        <select th:value="${book.category}" id="category" class="form-control">
+                            <option value="" selected="selected" disabled="disabled">Please
+                                select an option...
+                            </option>
+                            <option value="Fundamentals" th:selected="(${book.category}=='Fundamentals')">
+                                Fundamentals
+                            </option>
+                            <option value="Programming" th:selected="(${book.category}=='Programming')">
+                                Programming
+                            </option>
+                            <option value="Engineering" th:selected="(${book.category}=='Engineering')">
+                                Engineering
+                            </option>
+                            <option value="Advanced" th:selected="(${book.category}=='Advanced')">Advanced</option>
+                            <option value="SQL" th:selected="(${book.category}=='SQL')">SQL</option>
+
+                        </select>
+                    </div>
+                </div>
+                </br>
+
+                <!--# of pages in the book-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="pageNumber">Pages</label>
+                    <div class="col-md-8">
+                        <input type="number" name="numberOfPages"
+                               class="form-control" id="pageNumber"
+                               th:value="${book.numberOfPages}" placeholder="Page Number"/><span
+                            class="help-block">Number of Pages</span>
+                    </div>
+                </div>
+
+                <!-- format -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="format">Format</label>
+                    <div class="col-xs-8">
+                        <select th:value="${book.format}" id="format" name="format"
+                                class="form-control">
+                            <option value="paperback">Paperback</option>    <!--drop-down-->
+                            <option value="hardcover">Hardcover</option>
+                        </select>
+                    </div>
+                </div>
+                </br>
+
+                <!-- isbn, in-stock book number-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="isbn">ISBN</label>
+
+                    <div class="col-md-8">
+                        <input type="text" name="isbn"
+                               class="form-control" id="isbn" th:value="${book.isbn}"
+                               placeholder="ISBN"/><span class="help-block">Book ISBN</span>
+                    </div>
+                </div>
+
+                <!--shipping weight -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="shippingWeight">Shipping
+                        Weight</label>
+                    <div class="col-xs-8">
+                        <div class="input-group">
+                            <input th:value="${book.shippingWeight}" type="number" name="shippingWeight"
+                                   class="form-control" id="shippingWeight"
+                                   placeholder="Shipping Weight"/>
+                            <span class="input-group-addon">Ounces</span>
                         </div>
+                        <span class="help-block">Book Shipping Weight</span>
                     </div>
+                </div>
 
-                    <!-- category -->
-                    <div class="form-group">
-                        <label class="col-xs-2 control-label" for="category">* Category</label>
-                        <div class="col-xs-8">
-                            <select th:value="${book.category}" id="category" class="form-control">
-                                <option value="Fundamentals" th:selected="(${book.category}=='Fundamentals')">Fundamentals</option>
-                                <option value="Programming" th:selected="(${book.category}=='Programming')">Programming</option>
-                                <option value="Engineering" th:selected="(${book.category}=='Engineering')">Engineering</option>
-                                <option value="Advanced" th:selected="(${book.category}=='Advanced')">Advanced</option>
-                                <option value="SQL" th:selected="(${book.category}=='SQL')">SQL</option>
-
-                            </select>
+                <!-- list price -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="listPrice">List Price</label>
+                    <div class="col-xs-8">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input th:value="${book.listPrice}" type="number" name="listPrice"
+                                   class="form-control" id="listPrice"
+                                   placeholder="List Price"/>
                         </div>
+                        <span class="help-block">Book List Price</span>
                     </div>
+                </div>
 
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </fieldset>
-            </form>
+                <!-- our price,discounted -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="ourPrice">Our Price</label>
+                    <div class="col-xs-8">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input th:value="${book.ourPrice}" type="number" name="ourPrice"
+                                   class="form-control" id="ourPrice"
+                                   placeholder="Our Price"/>
+                        </div>
+                        <span class="help-block">Our Discounted Price of the Book</span>
+                    </div>
+                </div>
+
+                <!-- available copies of book, in-stock -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="inStockNumber">Number in stock</label>
+                    <div class="col-xs-8">
+                        <input th:value="${book.inStockNumber}" type="number" name="inStockNumber"
+                               class="form-control" id="inStockNumber"
+                               placeholder="Number of in-stock copies"/>
+                        <span class="help-block">Number of In-stock Copies</span>
+                    </div>
+                </div>
+
+                <!-- status of book -->
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="status">Status</label>
+                    <div class="col-xs-8">
+                        <label><input value="true" type="radio" name="active"
+                                      checked="checked"
+                        /> Available </label>    <!--default status checked true-->
+                        <label><input value="false" type="radio" name="active"
+
+                        /> Unavailable </label>
+                        <span class="help-block">Available or Unavailable</span>
+                    </div>
+                </div>
+
+                <!-- description -->
+                <div class="form-group">
+                    <label class="col-md-2 control-label" for="description">Description</label>
+                    <div class="col-md-8">
+                            <textarea name="description" rows="5"
+                                      class="form-control" id="description" th:value="${book.description}"
+                                      placeholder="Description"></textarea><span
+                            class="help-block">Book Description</span>
+                    </div>
+                </div>
+
+                <!-- upload image -->
+                <div class="form-group">
+                    <div class="col-xs-2">
+                        <label for="bookImage">Upload Book Image</label>
+                    </div>
+                    <div class="col-xs-8">
+                        <input id="bookImage" type="file" name="bookImage" th:value="${book.bookImage}"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-success">Add Book</button>
+                        <a class="btn btn-danger" th:href="@{/}">Cancel</a> <!--then goes back to root path-->
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
-    </div>
+</div>
 
 
 <div th:replace="common/header :: body-bottom-scripts">
 
-    </div>
 </div>
+
+
 </body>
 </html>

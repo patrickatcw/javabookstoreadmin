@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="common/header :: common-header"></head>
+<head th:replace="common/header :: common-header">
 
-
+</head>
 
 <body>
 
@@ -12,7 +12,7 @@
 
 <img src="https://cdn.logojoy.com/wp-content/uploads/2017/07/Java_logo_icon.png"
      style="width:400px;height:200px;"/>
-<hr>
+<hr/>
 <div class="row">
     <div class="col-xs-4 col-md-offset-4">
         <div class="bg-danger" th:if="${param.error}">
@@ -41,7 +41,9 @@
 </div>
 </div>
 
-<div th:replace="common/header :: body-bottom-scripts"></div>
+<div th:replace="common/header :: body-bottom-scripts">
+
+</div>
 
 </body>
 </html>

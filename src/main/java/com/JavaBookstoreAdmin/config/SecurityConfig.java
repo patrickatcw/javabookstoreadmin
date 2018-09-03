@@ -33,11 +33,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_MATCHERS = {
             "/css/**",
             "/js/**",
-            //paths important for new user login and email notification
             "/newUser",
+            /*"/home",
+            "/addBook",
+            "/",*/
             "/forgetPassword",
             "/login",
-            //"/addBook",
             "/fonts/**"
 
     };
@@ -53,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable().cors().disable()          //disables crossite requests
                 .formLogin().failureUrl("/login?error")
                     //the default for sussesful login should be the home path
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/")
                 .loginPage("/login").permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
