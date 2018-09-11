@@ -85,6 +85,16 @@
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
 
+		<!--for validation of object book -->
+		<!--<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>-->
+
 	</dependencies>
 
 	<build>

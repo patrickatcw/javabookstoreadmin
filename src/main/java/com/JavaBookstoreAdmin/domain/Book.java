@@ -135,12 +135,10 @@ public class Book {
         this.ourPrice = ourPrice;
     }
 
-    public boolean isActive() {
-        return active;
+    public boolean isActive() { return active;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setActive(boolean active) { this.active = active;
     }
 
     public String getDescription() {

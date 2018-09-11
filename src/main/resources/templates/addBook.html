@@ -14,7 +14,7 @@
             <fieldset>
                 <legend class="center-block">
                     New Book Information
-                    </br>
+                    <br>
                     <span style="font-size:small"> (* is a required field)</span>
 
                 </legend>
@@ -60,7 +60,7 @@
                     <label class="col-md-2 control-label" for="publicationDate">Publication Date</label>
                     <div class="col-md-8">
                         <input type="date" class="form-control" id="publicationDate" name="publicationDate"
-                               th:value="${book.publicationDate}" placeholder="ublication Date"/>
+                               th:value="${book.publicationDate}" placeholder="Publication Date"/>
                         <span class="help-block">Publication Date</span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                         </select>
                     </div>
                 </div>
-                </br>
+                <br>
 
                 <!-- category -->
                 <div class="form-group">
@@ -102,7 +102,7 @@
                         </select>
                     </div>
                 </div>
-                </br>
+                <br>
 
                 <!--# of pages in the book-->
                 <div class="form-group">
@@ -126,7 +126,7 @@
                         </select>
                     </div>
                 </div>
-                </br>
+                <br>
 
                 <!-- isbn, in-stock book number-->
                 <div class="form-group">
@@ -134,8 +134,9 @@
 
                     <div class="col-md-8">
                         <input type="text" name="isbn"
-                               class="form-control" id="isbn" th:value="${book.isbn}"
-                               placeholder="ISBN"/><span class="help-block">Book ISBN</span>
+                               class="form-control" id="isbn"
+                               th:value="${book.isbn}" placeholder="ISBN"/><span
+                            class="help-block">Book ISBN</span>
                     </div>
                 </div>
 
@@ -182,7 +183,7 @@
                     </div>
                 </div>
 
-                <!-- available copies of book, in-stock -->
+                <!-- available copies of imagr, in-stock -->
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="inStockNumber">Number in stock</label>
                     <div class="col-xs-8">
@@ -198,12 +199,10 @@
                     <label class="col-xs-2 control-label" for="status">Status</label>
                     <div class="col-xs-8">
                         <label><input value="true" type="radio" name="active"
-                                      checked="checked"
-                        /> Available </label>    <!--default status checked true-->
-                        <label><input value="false" type="radio" name="active"
-
-                        /> Unavailable </label>
-                        <span class="help-block">Available or Unavailable</span>
+                                      checked="checked"/> Active </label>    <!--default status checked true-->
+                        <label><input value="false" type="radio" name="active"/>
+                            Inactive </label>
+                        <span class="help-block">Active or Inactive</span>
                     </div>
                 </div>
 
@@ -213,8 +212,8 @@
                     <div class="col-md-8">
                             <textarea name="description" rows="5"
                                       class="form-control" id="description" th:value="${book.description}"
-                                      placeholder="Description"></textarea><span
-                            class="help-block">Book Description</span>
+                                      placeholder="Description"></textarea>
+                        <span class="help-block">Book Description</span>
                     </div>
                 </div>
 
