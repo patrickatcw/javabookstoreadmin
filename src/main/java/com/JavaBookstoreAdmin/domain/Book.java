@@ -104,6 +104,7 @@ public class Book {
     }
 
     //changes here to manage an isbn with different variables
+    //and changes made to database VARCHAR 255
     public String getIsbn() { return isbn; }
 
     public void setIsbn(String isbn) {
