@@ -10,14 +10,15 @@
 
 </div>
 
-<!--<h2>BOOK LIST VIEW</h2>-->
+<h2><center>JAVA BOOKSTORE BOOK LIST</center></h2>
+
+</br>
 
 <div class="container">
     <div class="table-responsive">
         <table id="bookListTable" class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                    <th><input th:id="selectAllBooks" type="checkbox"></th>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Category</th>
@@ -29,16 +30,14 @@
             </thead>
 
             <tbody>
-                <tr data-th-each="book : ${bookList}">
+                <tr data-th-each="book : ${bookList}">   <!--gets the book info-->
                         <td th:text="${book.title}"></td>
                         <td th:text="${book.author}"></td>
                         <td th:text="${book.category}"></td>
                         <td th:text="${book.listPrice}"></td>
                         <td th:text="${book.ourPrice}"></td>
                         <td th:text="${book.active}"></td>
-                    <td>
-                        Delete
-                    </td>
+                        <td><font color="red">DELETE</font></td>
                 </tr>
             </tbody>
         </table>
