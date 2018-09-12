@@ -7,6 +7,8 @@ import com.JavaBookstoreAdmin.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookServiceImpl implements BookService {
 	
@@ -18,4 +20,12 @@ public class BookServiceImpl implements BookService {
 		return bookRepository.save(book);
 
     }
+
+    //for booklist
+    public List<Book> findAll() {
+
+		return (List<Book>) bookRepository.findAll();
+
+	}
+
 }

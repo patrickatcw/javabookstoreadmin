@@ -53,7 +53,9 @@
                         <!--<li><a href="#">Add a new book</a></li>-->
                         <!--changes for link for this drop-down-->
                         <li><a th:href="@{/book/add}">Add a New Book</a></li>
-                        <li><a href="#">View Book List</a></li>
+                        <!--<li><a href="#">View Book List</a></li>-->
+                        <!--changes made for addbook, in controller have book as root, then booklist as secondary-->
+                        <li><a th:href="@{/book/bookList}">View Book List</a></li>
                     </ul>
                 </li>
             </ul>
