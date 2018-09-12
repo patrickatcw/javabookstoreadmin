@@ -83,9 +83,9 @@
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="category">* Category</label>
                     <div class="col-xs-8">
-                        <select th:value="${book.category}" id="category" class="form-control">
+                        <select th:value="${book.category}" id="category" name="category" class="form-control">
                             <option value="" selected="selected" disabled="disabled">Please
-                                select an option...
+                                Select an Option for Book Category...
                             </option>
                             <option value="Fundamentals" th:selected="(${book.category}=='Fundamentals')">
                                 Fundamentals
