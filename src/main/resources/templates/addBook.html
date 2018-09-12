@@ -129,6 +129,8 @@
                 <br>
 
                 <!-- isbn, in-stock book number-->
+                <!--need to be able to accept spaces, commas, letters, capital letters and numbers....accept all-->
+                <!--changes made in book class to string-->
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="isbn">ISBN</label>
 
@@ -141,12 +143,14 @@
                 </div>
 
                 <!--shipping weight -->
+                <!--need to be able to accept weights to the tenth, example: 12.4 -->
+                <!--changes made in database for decimal-->
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="shippingWeight">Shipping
                         Weight</label>
                     <div class="col-xs-8">
                         <div class="input-group">
-                            <input th:value="${book.shippingWeight}" type="number" name="shippingWeight"
+                            <input th:value="${book.shippingWeight}" type="number" name="shippingWeight" step=".1"
                                    class="form-control" id="shippingWeight"
                                    placeholder="Shipping Weight"/>
                             <span class="input-group-addon">Ounces</span>
@@ -156,13 +160,15 @@
                 </div>
 
                 <!-- list price -->
+                <!--need to be able to input dollar value with change, ex. 18.99-->
+                <!--done, changes made here for step and database for decimal-->
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="listPrice">List Price</label>
                     <div class="col-xs-8">
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input th:value="${book.listPrice}" type="number" name="listPrice"
-                                   class="form-control" id="listPrice"
+                                   step=".01" class="form-control" id="listPrice"
                                    placeholder="List Price"/>
                         </div>
                         <span class="help-block">Book List Price</span>
@@ -170,20 +176,22 @@
                 </div>
 
                 <!-- our price,discounted -->
+                <!--need to be able to input dollar value with change, ex. 18.99-->
+                <!--done, changes made here for step and database for decimal-->
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="ourPrice">Our Price</label>
                     <div class="col-xs-8">
                         <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input th:value="${book.ourPrice}" type="number" name="ourPrice"
-                                   class="form-control" id="ourPrice"
+                                   step=".01" class="form-control" id="ourPrice"
                                    placeholder="Our Price"/>
                         </div>
                         <span class="help-block">Our Discounted Price of the Book</span>
                     </div>
                 </div>
 
-                <!-- available copies of imagr, in-stock -->
+                <!-- available copies of book, in-stock -->
                 <div class="form-group">
                     <label class="col-xs-2 control-label" for="inStockNumber">Number in stock</label>
                     <div class="col-xs-8">
