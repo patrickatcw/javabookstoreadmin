@@ -218,8 +218,8 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="description">Description</label>
                     <div class="col-md-8">
-                            <textarea name="description" rows="5"
-                                      class="form-control" id="description" th:value="${book.description}"
+                            <textarea name="description" rows="5" class="form-control"
+                                      id="description" th:value="${book.description}" th:text="${book.description}"
                                       placeholder="Description"></textarea>
                         <span class="help-block">Book Description</span>
                     </div>
@@ -239,7 +239,8 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <button type="submit" class="btn btn-success">Update Book Information</button>
-                        <a class="btn btn-danger" th:href="@{/}">Cancel</a> <!--then goes back to root path-->
+                        <!--<a class="btn btn-danger" th:href="@{/}">Cancel</a>-->
+                        <a class="btn btn-danger" th:href="@{/book/bookInfo(id=${book.id})}">Cancel</a>
                     </div>
                 </div>
             </fieldset>
