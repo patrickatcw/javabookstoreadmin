@@ -28,4 +28,13 @@ public class BookServiceImpl implements BookService {
 
 	}
 
+	public Book findById(Long id) {
+
+		//https://www.concretepage.com/spring-boot/spring-boot-crudrepository-example
+		Book book = bookRepository.findById(id).get();
+		return book;
+
+
+	}
+
 }

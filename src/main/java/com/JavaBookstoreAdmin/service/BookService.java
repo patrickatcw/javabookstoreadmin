@@ -11,4 +11,6 @@ public interface BookService {
     //defining from code in bookcontroller (and work in bookserviceimpl)
     List<Book> findAll();
 
+    Book findById(Long id);
+
 }

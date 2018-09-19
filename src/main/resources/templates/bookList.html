@@ -31,7 +31,9 @@
 
             <tbody>
                 <tr data-th-each="book : ${bookList}">   <!--gets the book info-->
-                        <td th:text="${book.title}"></td>
+                        <!--<td th:text="${book.title}"></td>-->
+                    <td><a th:href="@{/book/bookInfo(id=${book.id})}"><span th:text="${book.title}"></span></a></td>
+                    <!--book title now becomes a link with clickability-->
                         <td th:text="${book.author}"></td>
                         <td th:text="${book.category}"></td>
                         <td th:text="${book.listPrice}"></td>
