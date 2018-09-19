@@ -63,6 +63,14 @@ public class BookController {
         return "bookInfo";
     }
 
+    @RequestMapping("/editBookInfo")
+    public String updateBook(@RequestParam("id") Long id, Model model) {
+        Book book = bookService.findById(id);
+        model.addAttribute("book", book);
+
+        return "editBookInfo";
+    }
+
     @RequestMapping("/bookList")
     public String bookList(Model model) {
 
