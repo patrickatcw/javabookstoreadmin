@@ -19,6 +19,10 @@
 
                 </legend>
 
+                <!--for updating/editing book info so we change book info and do not
+                add a new book, hibernate would just create another book without this -->
+                <input hidden="hidden" name="id" th:value="${book.id}"/>
+
                 <!-- title -->
                 <div class="form-group">
                     <label class="col-md-2 control-label" for="title">* Title</label>
