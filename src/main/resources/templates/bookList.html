@@ -45,10 +45,28 @@
         </table>
     </div>
 
-    <button th:id="deleteSelected" class="btn btn-danger ">Delete Selected</button>
 </div>
 
+    <!--<button th:id="deleteSelected" class="btn btn-danger ">Delete Selected</button>
+</div>-->
+
 <div th:replace="common/header :: body-bottom-scripts"></div>
+
+<!--for datatable layout-->
+<!--https://datatables.net/reference/option/lengthMenu-->
+<!--https://datatables.net/examples/advanced_init/length_menu.html-->
+<!--https://www.youtube.com/watch?v=w9mFOUFNmfQ-->
+<!--https://github.com/thymeleaf/thymeleaf/issues/548-->
+<!--<script>-->
+<script th:inline="none">
+        $(document).ready(function() {
+			$("#bookListTable").DataTable({
+				"lengthMenu": [[5,10,15,20,-1],[5,10,15,20,"All"]],
+				"ordering": false,
+				stateSave: true
+			});
+		});
+	</script>
 
 </body>
 </html>
