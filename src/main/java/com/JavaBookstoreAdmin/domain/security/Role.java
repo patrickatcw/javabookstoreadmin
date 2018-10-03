@@ -1,5 +1,6 @@
 package com.JavaBookstoreAdmin.domain.security;
 
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -13,7 +14,7 @@ public class Role {
 
     //onetomany creates a realtionship between the role class and userrole class
     //one role can have more than one userroles
-    @OneToMany(mappedBy = "role", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "role", cascade= CascadeType.ALL, fetch= FetchType.LAZY)
     //need to create UserRole class
     private Set<UserRole> userRoles = new HashSet<>();
 

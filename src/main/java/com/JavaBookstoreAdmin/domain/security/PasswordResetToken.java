@@ -2,6 +2,7 @@ package com.JavaBookstoreAdmin.domain.security;
 
 //binding token to user in a time window
 
+
 import com.JavaBookstoreAdmin.domain.User;
 
 import javax.persistence.*;
